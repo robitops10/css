@@ -1,0 +1,104 @@
+
+:root {
+	box-sizing: border-box;
+}
+*,
+::before,
+::after {
+	box-sizing: inherit;
+}
+
+body {
+	background-color: #eee;
+	font-family: Helvetica, Arial, sans-serif;
+}
+body * + * {
+	margin-top: 1.5em;
+}
+
+.container {
+	max-width: 1080px;
+	margin: 0 auto;
+}
+
+header {
+	color: #fff;
+	background-color: #0072b0;
+	border-radius: 0.5em;
+	padding: 1em 1.5em;
+	/* margin-bottom: 1.5em; */
+}
+
+.main {
+	background-color: #fff;
+	border-radius: 0.5rem;
+	padding: 0 1.5em;
+}
+/*
+.clearfix::before,
+.clearfix::after {
+	content: ' ';
+	display: table;
+	clear: both;
+}
+ */
+
+
+.row::after {
+	content: ' ';
+	display: block;
+	clear: both;
+}
+
+[class*="column-"] {
+	float: left;
+}
+
+.column-1 { width: calc(1 / 12%); }
+
+
+
+
+.media {
+	/* width: 50%; */
+	float: left;
+	padding: 1em;
+	background-color: #eee;
+	border-radius: 0.5em;
+	/* we reset margin-top (added by body * + * ) & add some for right & bottom margin as gutter */
+	margin: 0 1.5em 1.5em 0;
+	width: calc(50% - 1.5em);
+
+}
+
+/* prevent every 1st element of every row to be floated */
+.media:nth-child(odd) {
+	clear: left;
+}
+
+.media-image {
+	float: left;
+	margin-right: 1.5em;
+}
+
+.media-body {
+	margin-top: 0;
+	overflow: auto;
+	/* display: grid; */
+	/* display: table-cell; */
+
+	/* image-Width : 95px, margin-right: 1.5em by image */
+/*
+	display: inline-block;
+	width: calc( 100% - 95px - 1.5em);
+ */
+
+}
+.media-body > h4 {
+	margin-top: 0;
+}
+.media-body > p {
+	margin-top: 0;
+}
+
+
